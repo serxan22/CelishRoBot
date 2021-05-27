@@ -52,16 +52,15 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Hello🥳 {}, my name is {}! 
-You can find my list of available commands with /help.
-i'm a group manager bot. Maintained by @sangramghangale ❤
+Salam👋 [{}](tg://user?id={}),Mənim adım 𝘾𝙀𝙇𝙄𝙎𝙃𝙍𝙊𝘽𝙊𝙏! 
+Botdan istifadə haqqında /help yazın. Sahibim- @Drakuladi ❤
 
 """
 
 HELP_STRINGS = """
-Hey there! My name is *{}*.
+Salam! Mənim adım *{CelishRoBot}*.
 
-*Main* commands available:
+Əsas komandalar:
  • /help: PM's you this message.
  • /help <module name>: PM's you info about that module.
  • /donate: information on how to donate!
@@ -76,10 +75,10 @@ And the following:
     dispatcher.bot.first_name, ""
     if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n")
 
-SAITAMA_IMG = "https://telegra.ph/file/200b2cebc65cfbe720dd0.png"
+SAITAMA_IMG = "https://telegra.ph/Serxan-05-27"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
-Supporting him; [𝗖𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝘆𝗤𝘂𝗲𝗲𝗻](t.me/sangramghangale)"""
+DONATE_STRING = """Botumuza dəstək olduğunuz üçün sevindim!
+Dəstək üçün;(t.me/Drakuladi)"""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -197,26 +196,26 @@ def start(update: Update, context: CallbackContext):
                 reply_markup=InlineKeyboardMarkup(
                     [[
                         InlineKeyboardButton(
-                            text="𝗖𝗵𝗼𝗰𝗼𝗹𝗮𝘁𝘆𝗤𝘂𝗲𝗲𝗻👰 Add  to your group",
-                            url="t.me/{}?startgroup=true".format(
+                            text="CelishRoBot'u qrupa əlavə edin.",
+                            url="t.me/{CelishRoBot}?startgroup=true".format(
                                 context.bot.username))
                     ],
                      [
                          InlineKeyboardButton(
-                             text="Support Group",
-                             url=f"https://t.me/maharashtrafriendcircle"),
+                             text="Dətək qrupumuz.",
+                             url=f"https://t.me/DarkLegionChat"),
                          InlineKeyboardButton(
-                             text="📘 Logs",
-                             url="https://t.me/chocolatyqueenvcplayer")
+                             text="Botun Sahibi👨‍💻",
+                             url="https://t.me/Drakuladi")
                      ],
                      [
                          InlineKeyboardButton(
-                             text="☑️ Source code",
-                             url="https://github.com/sangramghangale/QueenRobot")
+                             text="☑️ Repo kodu",
+                             url="https://github.com/serxan22/celishrobot")
                      ]]))
     else:
         update.effective_message.reply_text(
-            "I'm online!\n<b>Up since:</b> <code>{}</code>".format(uptime),
+            "Hazırda onlaynam✅!\n<b>Up since:</b> <code>{}</code>".format(uptime),
             parse_mode=ParseMode.HTML)
 
 
@@ -491,8 +490,8 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 254318997 and DONATION_LINK:
             update.effective_message.reply_text(
-                "You can also donate to the person currently running me "
-                "[here]({})".format(DONATION_LINK),
+                "Buradanda destek ola bilersiz "
+                "[Drakuladi]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN)
 
     else:
